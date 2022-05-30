@@ -5,7 +5,7 @@ import java.security.SecureRandom;
 import java.util.Scanner;
 
 public class Main {
-    static int numOfBits = 15;
+    static int numOfBits = 5;
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -24,7 +24,7 @@ public class Main {
 
         String encryptedMessage = encrypt(message, Ka, N);
         System.out.println("\nЗашифроване повідомлення: " + encryptedMessage);
-        //System.out.println("\nРозшифроване повідомлення: " + decrypt(encryptedMessage, Kb, N));
+        System.out.println("\nРозшифроване повідомлення: " + decrypt(encryptedMessage, Kb, N));
     }
 
     public static String encrypt(String message, BigInteger k, BigInteger n) {
@@ -46,7 +46,6 @@ public class Main {
         return encrypted.toString();
     }
 
-    // works incorrectly
     public static String decrypt(String message, BigInteger k, BigInteger n) {
         StringBuilder decrypted = new StringBuilder();
         int[] mesID = new int[message.length()];
